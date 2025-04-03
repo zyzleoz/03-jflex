@@ -20,32 +20,45 @@
 // Diretiva:
 %standalone // Execução independente do analisador sintático.
 
+// Macros:
+letra = [a-zA-Z]
+digito = [0-9]
+palavra = {letra}+
+numero = {digito}+
+
 %%
 
 /* Regras e Ações Associadas: seção de instruções para 
  * o analisador léxico. 
  */
 
-a(a|b)* {System.out.println("começa com a");} //Isso é uma regra.
-b(a|b)* {System.out.println("começa com b");} //Isso é uma outra regra.
+{numero} {System.out.println(" -> Encontrei um {número}");}
+{palavra} {System.out.println(" -> Encontrei uma {palavra}");}
 
 </pre>
 
 ## Arquivo: entrada01.txt:
 <pre>
-aaaaababa
-ababababa
-babababab
-baaaaaaaa
-cabababab
+abcde
+abc
+abc123
+123abcd
+123abc
+123
 </pre>
 
 ## Arquivo: entrada02.txt:
 
 <pre>
-11a00a11a00a11a00b11a00b11a
-bbbbba
-aaababababbb
+1
+a
+2
+b
+1a
+a2
+b1
+aba
+121
 </pre>
 
 ## Execução:
